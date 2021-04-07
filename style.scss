@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+.grid__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.calculation {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    &__title {
+        width: fit-content;
+        padding: 20px 20px;
+        font-size: 1.4rem;
+        letter-spacing: .1rem;
+    }
+}
+
+.selection {
+    width: 20vw;
+    padding: 20px 20px;
+    font-size: 1.1rem;
+
+    &__price {
+        margin-top: 20px;
+
+        span {
+            float: right;
+        }
+    }
+
+    &__text {
+        margin-right: 30px;
+    }
+
+    &__box {
+        float: right;
+    }
+}
+
+.total__price {
+    width: 20vw;
+    padding: 20px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+
+    span {
+        float: right;
+    }
+}
+
+.button__sum {
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+
+    &-btn {
+        
+    }
+}
+
+.budget-positive {
+    padding: 20px 20px;
+    font-size: 1.4rem;
+}
+.budget-negative {
+    padding: 20px 20px;
+    font-size: 1.4rem;
+}
+
+.hidden {
+    display: none;
+}
