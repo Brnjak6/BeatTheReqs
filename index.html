@@ -11,17 +11,24 @@
 <body class="body">
     <div class="grid__container">
         <div class="calculation">
+            <div class="calculation__clip"></div>
             <h3 class="calculation__title">Choose your components</h3>
             <!-- Start of component selections -->
             <div class="selection">
                 <label for="cpu" class="selection__text">Select your cpu:</label>
                 <select name="processors" id="cpu" class="selection__box">
-                    <option value="R1600" data-price="80">FX 6300</option>
-                    <option value="R1600" data-price="100">FX 8320</option>
-                    <option value="R1600" data-price="130">Ryzen 3 2200G</option>
-                    <option value="R1600" data-price="150">Ryzen 5 1600</option>
-                    <option value="R2600" data-price="190">Ryzen 5 2600</option>
+                    <option value="am3" data-price="80">FX 6300</option>
+                    <option value="am3" data-price="100">FX 8320</option>
+                    <option value="am4" data-price="130">Ryzen 3 2200G</option>
+                    <option value="int" data-price="140">i5 10400F</option>
+                    <option value="am4" data-price="150">Ryzen 5 1600</option>
+                    <option value="int" data-price="170">i5 9400</option>
+                    <option value="am4" data-price="190">Ryzen 5 2600</option>
+                    <option value="int" data-price="210">i5 10600</option>
                     <option value="R3600" data-price="230">Ryzen 5 3600</option>
+                    <option value="int" data-price="310">i7 10700</option>
+                    <option value="int" data-price="350">i7 11700</option>
+                    <option value="am4" data-price="420">Ryzen 7 3800X</option>
                 </select>
                 <div class="selection__price">
                    <p>Price: <span class="price">0</span><span>$</span></p>
@@ -31,12 +38,15 @@
             <div class="selection">
                 <label for="gpu" class="selection__text">Select your gpu:</label>
                 <select name="graphic-cards" id="gpu" class="selection__box">
-                    <option value="1050ti" data-price="90">GTX 650 Ti</option>
+                    <option value="gpu" data-price="90">GTX 650 Ti</option>
+                    <option value="pot" data-price="20">XFX Potato</option>
+                    <option value="gpu" data-price="100">AMD HD 7850 </option>
                     <option value="gpu" data-price="110">GTX 660</option>
                     <option value="gpu" data-price="140">GTX 950</option>
                     <option value="gpu" data-price="170">GTX 960</option>
                     <option value="gpu" data-price="180">GTX 1050 Ti</option>
                     <option value="gpu" data-price="210">GTX 1060</option>
+                    <option value="gpu" data-price="230">RX 5500 XT</option>
                     <option value="gpu" data-price="240">GTX 1070</option>
                     <option value="gpu" data-price="280">RTX 2060</option>
                     <option value="gpu" data-price="350">RTX 2070</option>
@@ -61,11 +71,11 @@
             <div class="selection">
                 <label for="mobo" class="selection__text">Select your motherboard:</label>
                 <select name="mobo" id="mobo" class="selection__box">
-                    <option value="8" data-price="50">ASRock 760GM /AM3</option>
-                    <option value="8" data-price="60">Gigabyte A320M /AM4</option>
-                    <option value="16" data-price="70">ASRock A520M /AM4</option>
-                    <option value="16" data-price="85">MSI A520M /AM4</option>
-                    <option value="16" data-price="100">MSI B450M /AM4</option>
+                    <option value="am3" data-price="50">ASRock 760GM /AM3</option>
+                    <option value="am4" data-price="60">Gigabyte A320M /AM4</option>
+                    <option value="am4" data-price="70">ASRock A520M /AM4</option>
+                    <option value="am4" data-price="85">MSI A520M /AM4</option>
+                    <option value="am4" data-price="100">MSI B450M /AM4</option>
                 </select>
                 <div class="selection__price">
                    <p>Price: <span class="price">0</span><span>$</span></p>
@@ -113,9 +123,9 @@
             <div class="selection">
                 <label for="cooler" class="selection__text">Select your cpu cooler:</label>
                 <select name="cooler" id="cooler" class="selection__box">
-                    <option value="8" data-price="8">SST KR03 /AM4</option>
-                    <option value="8" data-price="8">TT /AM2-AM4</option>
-                    <option value="16" data-price="35">Z Optima II /AM4</option>
+                    <option value="am4" data-price="8">SST KR03 /AM4</option>
+                    <option value="am3" data-price="10">TT Cooler /AM3</option>
+                    <option value="am4" data-price="35">Z Optima II /AM4</option>
                 </select>
                 <div class="selection__price">
                    <p>Price: <span class="price">0</span><span>$</span></p>
@@ -123,23 +133,20 @@
             </div>
             <!-- End of component selections -->
             <div class="total__price">
-                <p>Total price: <span id="price-total">0</span></p>
+                <p>Total amount: <span id="price-total">0</span></p>
             </div>
 
             <div class="button__sum">
                 <button class="button-sum-btn">Submit your choices</button>
             </div>
-           
-            <div class="budget-positive hidden">
-                You've met the budget
-            </div>
-            <div class="budget-negative hidden">
-                Your budget exceeds the limit of 300$
-            </div>
-            
-
         </div>
-        <div class="challenge">CH</div>
+        <div class="challenge">
+            <div class="message">
+                <div class="message__content hidden">
+                    Great choice!
+                </div>
+            </div>
+        </div>
     </div>
 
 </body>

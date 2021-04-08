@@ -1,3 +1,4 @@
+@import "./defaults";
 * {
     margin: 0;
     padding: 0;
@@ -15,15 +16,21 @@ html {
 .grid__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    min-height: 100vh;
+    background-image: url(./img/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:sticky;
 }
 
 .calculation {
     display: flex;
     flex-direction: column;
-    text-align: left;
+    align-items: center;
 
     &__title {
-        width: fit-content;
+        width: 38vw;
+        text-align: center;
         padding: 20px 20px;
         font-size: 1.4rem;
         letter-spacing: .1rem;
@@ -31,12 +38,13 @@ html {
 }
 
 .selection {
-    width: 25vw;
-    padding: 10px 20px;
+    width: 38vw;
+    padding: 8px 20px;
     font-size: 1.1rem;
 
     &__price {
         margin-top: 20px;
+        font-size: .9rem;
 
         span {
             float: right;
@@ -45,28 +53,59 @@ html {
 
     &__text {
         margin-right: 30px;
+        font-size: 1.2rem;
+        text-transform: uppercase;
     }
 
     &__box {
         float: right;
+        border: none;
+        background: $color-primary;
+        color: $color-light;
+        border-radius: 4px;
+        padding: 5px;
+        font-size: 16px;
+        letter-spacing: .8px;
+        outline: none;
+        cursor: pointer;
+
+        option {
+            font-weight: bold;
+            padding-top: 4px;
+        }
     }
 }
 
 .total__price {
-    width: 25vw;
+    width: 38vw;
     padding: 20px 20px;
     font-size: 1.1rem;
-    font-weight: bold;
+    letter-spacing: .1px;
 
     span {
         float: right;
     }
 }
 
-.button__sum {
-    width: 25vw;
+.button-sum-btn {
+    width: fit-content;
     display: flex;
     justify-content: center;
+    padding: 8px 15px;
+    font-size: 1.1rem;
+    background: $color-primary;
+    color: $color-light;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .1s;
+
+    &:active {
+        transform: translateY(3px);
+        box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
+    }
+
 
    
 }

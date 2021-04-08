@@ -15,54 +15,89 @@ html {
 .grid__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  background-image: url(./img/1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: sticky;
 }
 
 .calculation {
   display: flex;
   flex-direction: column;
-  text-align: left;
+  align-items: center;
 }
 .calculation__title {
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 38vw;
+  text-align: center;
   padding: 20px 20px;
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
 }
 
 .selection {
-  width: 25vw;
-  padding: 10px 20px;
+  width: 38vw;
+  padding: 8px 20px;
   font-size: 1.1rem;
 }
 .selection__price {
   margin-top: 20px;
+  font-size: 0.9rem;
 }
 .selection__price span {
   float: right;
 }
 .selection__text {
   margin-right: 30px;
+  font-size: 1.2rem;
+  text-transform: uppercase;
 }
 .selection__box {
   float: right;
+  border: none;
+  background: #714A4A;
+  color: #fff;
+  border-radius: 4px;
+  padding: 5px;
+  font-size: 16px;
+  letter-spacing: 0.8px;
+  outline: none;
+  cursor: pointer;
+}
+.selection__box option {
+  font-weight: bold;
+  padding-top: 4px;
 }
 
 .total__price {
-  width: 25vw;
+  width: 38vw;
   padding: 20px 20px;
   font-size: 1.1rem;
-  font-weight: bold;
+  letter-spacing: 0.1px;
 }
 .total__price span {
   float: right;
 }
 
-.button__sum {
-  width: 25vw;
+.button-sum-btn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   display: flex;
   justify-content: center;
+  padding: 8px 15px;
+  font-size: 1.1rem;
+  background: #714A4A;
+  color: #fff;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.button-sum-btn:active {
+  transform: translateY(3px);
+  box-shadow: 0px 5px 8px -4px rgba(0, 0, 0, 0.75);
 }
 
 .budget-positive {
