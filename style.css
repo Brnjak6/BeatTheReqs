@@ -32,8 +32,8 @@ html {
 }
 
 .selection {
-  width: 20vw;
-  padding: 20px 20px;
+  width: 25vw;
+  padding: 10px 20px;
   font-size: 1.1rem;
 }
 .selection__price {
@@ -50,7 +50,7 @@ html {
 }
 
 .total__price {
-  width: 20vw;
+  width: 25vw;
   padding: 20px 20px;
   font-size: 1.1rem;
   font-weight: bold;
@@ -60,10 +60,11 @@ html {
 }
 
 .button__sum {
-  width: 20vw;
+  width: 25vw;
   display: flex;
   justify-content: center;
 }
+
 .budget-positive {
   padding: 20px 20px;
   font-size: 1.4rem;

@@ -1,12 +1,8 @@
 'use strict';
-const cpuSelect = document.getElementById('cpu')
-const gpuSelect = document.getElementById('gpu')
-const ramSelect = document.getElementById('ram')
 let priceTotal = document.getElementById('price-total')
-const sumButton = document.querySelector('.button-sum')
-const selectedComponents = document.querySelectorAll('.selection__box')
-const prices = document.querySelectorAll('.price')
-
+const sumButton = document.querySelector('.button-sum-btn')
+const selectAll = document.querySelectorAll('.selection__box')
+const priceAll = document.querySelectorAll('.price')
 // First approach...
 // cpuSelect.addEventListener('click', function() {
 //    cpuPrice.innerHTML = cpuSelect.selectedOptions[0].dataset.price;
@@ -18,8 +14,22 @@ const prices = document.querySelectorAll('.price')
 //    ramPrice.innerText = ramSelect.selectedOptions[0].dataset.price
 // })
 
-selectedComponents.forEach(item => item.addEventListener('click', function(e) {
-    const price = e.target.closest('.selection').querySelector('.price')
-    price.innerHTML = parseInt(this.selectedOptions[0].dataset.price);
+selectAll.forEach(item => item.addEventListener('click', function(e) {
+    const priceTarget = e.target.closest('.selection').querySelector('.price');
+    priceTarget.textContent = this.selectedOptions[0].dataset.price;
 }))
+
+sumButton.addEventListener('click', function() {
+    let total = 0;
+
+    for (let i=0; i<priceAll.length; i++){
+        if(priceAll[i].innerHTML == 0) {
+            return priceTotal.innerHTML = 'Missing input'
+
+        } else {
+            total += parseInt(priceAll[i].innerHTML);
+        }
+      }
+      return priceTotal.innerHTML = total;
+})
 
