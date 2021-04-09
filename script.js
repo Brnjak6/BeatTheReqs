@@ -1,62 +1,51 @@
 'use strict';
 let priceTotal = document.getElementById('price-total')
+const sumButtonBox = document.querySelector('.button__sum')
 const sumButton = document.querySelector('.button-sum-btn')
 const selectAll = document.querySelectorAll('.selection__box')
 const priceAll = document.querySelectorAll('.price')
 const cpu = document.getElementById('cpu')
 const motherboard = document.getElementById('mobo')
 const gpu = document.getElementById('gpu')
-// First approach...
-// cpuSelect.addEventListener('click', function() {
-//    cpuPrice.innerHTML = cpuSelect.selectedOptions[0].dataset.price;
-// })
-// gpuSelect.addEventListener('click', function() {
-//    gpuPrice.innerText = gpuSelect.selectedOptions[0].dataset.price
-// })
-// ramSelect.addEventListener('click', function() {
-//    ramPrice.innerText = ramSelect.selectedOptions[0].dataset.price
-// })
+const ram = document.getElementById('ram')
+const price = document.querySelector('.price')
+const submitMessage = document.querySelector('.submit__message')
+const accessField = document.querySelector('.access')
+const accessFieldBtn = document.querySelector('.access-btn')
 
 
-selectAll.forEach(item => item.addEventListener('click', function(e) {
+let total = 0;
+
+selectAll.forEach(choice => choice.addEventListener('click', function(e) {
     const priceTarget = e.target.closest('.selection').querySelector('.price');
     priceTarget.textContent = this.selectedOptions[0].dataset.price;
 }))
 
-
-sumButton.addEventListener('click', function() {
-    let total = 0;
-
+sumButton.addEventListener('click', function(e) {
     for (let i=0; i<priceAll.length; i++){
-        
         if(priceAll[i].innerHTML == 0) {
             return priceTotal.innerHTML = 'Input missing...';
         } else {
             total += parseInt(priceAll[i].innerHTML);
         }
       }
-      
-      priceTotal.innerHTML = total;
 
-      motherboard.value === cpu.value ? true : priceTotal.innerHTML = 'Can not combine am3 with am4 component';
-
-      motherboard.value === cooler.value ? true : priceTotal.innerHTML = 'Can not combine am3 with am4 component';
-
-    
-      
-      if(!priceTotal.innerHTML.includes('am3' || 'input')) {
-        document.querySelector('.message__content').classList.remove('hidden')
+      if(cpu.value === motherboard.value) {
+        sumButtonBox.classList.add('hidden');
+        submitMessage.classList.remove('hidden');
+        accessField.classList.remove('hidden');
+        priceTotal.innerHTML = total;
+        cpu.style.border = 'none';
+        motherboard.style.border = 'none'
+        priceTotal.style.color = '#000'
+      } else {
+        total = 0;
+        priceTotal.textContent = 'Invalid combination'
+        priceTotal.style.color = 'red'
+        cpu.style.border = '4px solid red';
+        motherboard.style.border = '4px solid red';
       }
-
-      if(gpu.value === 'pot') {
-        priceTotal.textContent = 'Potato? Try again...'
-        setTimeout(() => {
-            document.querySelector('.challenge').textContent.add('🥔 * 20')
-        }, 2000);
-    }
-    
+   
 })
-
-console.log('🥔' * 20);
 
 

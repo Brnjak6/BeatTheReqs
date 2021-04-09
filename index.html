@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/sass/main.css">
     <script defer src="script.js"></script>
 </head>
 <body class="body">
@@ -22,10 +22,10 @@
                     <option value="am4" data-price="130">Ryzen 3 2200G</option>
                     <option value="int" data-price="140">i5 10400F</option>
                     <option value="am4" data-price="150">Ryzen 5 1600</option>
-                    <option value="int" data-price="170">i5 9400</option>
+                    <option value="int-1" data-price="170">i5 9400</option>
                     <option value="am4" data-price="190">Ryzen 5 2600</option>
                     <option value="int" data-price="210">i5 10600</option>
-                    <option value="R3600" data-price="230">Ryzen 5 3600</option>
+                    <option value="am4" data-price="230">Ryzen 5 3600</option>
                     <option value="int" data-price="310">i7 10700</option>
                     <option value="int" data-price="350">i7 11700</option>
                     <option value="am4" data-price="420">Ryzen 7 3800X</option>
@@ -39,7 +39,6 @@
                 <label for="gpu" class="selection__text">Select your gpu:</label>
                 <select name="graphic-cards" id="gpu" class="selection__box">
                     <option value="gpu" data-price="90">GTX 650 Ti</option>
-                    <option value="pot" data-price="20">XFX Potato</option>
                     <option value="gpu" data-price="100">AMD HD 7850 </option>
                     <option value="gpu" data-price="110">GTX 660</option>
                     <option value="gpu" data-price="140">GTX 950</option>
@@ -60,8 +59,10 @@
             <div class="selection">
                 <label for="ram" class="selection__text">Select your ram:</label>
                 <select name="ram" id="ram" class="selection__box">
-                    <option value="8" data-price="70">8GB DDR4</option>
-                    <option value="16" data-price="120">16GB DDR4</option>
+                    
+                    <option value="am4" data-price="70">8GB RAM</option>
+                    <option value="am4" data-price="90">12GB RAM</option>
+                    <option value="am4" data-price="120">16GB RAM</option>
                 </select>
                 <div class="selection__price">
                    <p>Price: <span class="price">0</span><span>$</span></p>
@@ -74,6 +75,8 @@
                     <option value="am3" data-price="50">ASRock 760GM /AM3</option>
                     <option value="am4" data-price="60">Gigabyte A320M /AM4</option>
                     <option value="am4" data-price="70">ASRock A520M /AM4</option>
+                    <option value="int-1" data-price="75">GB H310 /1151</option>
+                    <option value="int" data-price="80">ASUS H410M-A /1200</option>
                     <option value="am4" data-price="85">MSI A520M /AM4</option>
                     <option value="am4" data-price="100">MSI B450M /AM4</option>
                 </select>
@@ -123,9 +126,10 @@
             <div class="selection">
                 <label for="cooler" class="selection__text">Select your cpu cooler:</label>
                 <select name="cooler" id="cooler" class="selection__box">
-                    <option value="am4" data-price="8">SST KR03 /AM4</option>
-                    <option value="am3" data-price="10">TT Cooler /AM3</option>
-                    <option value="am4" data-price="35">Z Optima II /AM4</option>
+                    <option value="clr" data-price="10">SST-KR03</option>
+                    <option value="clr" data-price="20">Zalman CNPS4X</option>
+                    <option value="clr" data-price="30">LC CC-120</option>
+                    <option value="clr" data-price="70">Zalman CNPS16X</option>
                 </select>
                 <div class="selection__price">
                    <p>Price: <span class="price">0</span><span>$</span></p>
@@ -139,13 +143,16 @@
             <div class="button__sum">
                 <button class="button-sum-btn">Submit your choices</button>
             </div>
+            <div class="submit__message hidden">
+                <p>It works!<br> Let's see what you have picked</p>
+            </div>
+
         </div>
         <div class="challenge">
-            <div class="message">
-                <div class="message__content hidden">
-                    Great choice!
-                </div>
+            <div class="access hidden">
+                <button class="access-btn">Discover now</button>
             </div>
+
         </div>
     </div>
 
