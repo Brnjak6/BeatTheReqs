@@ -52,7 +52,7 @@
 }
 
 .total__price {
-    width: 38vw;
+    width: 30vw;
     padding: 20px 20px;
     font-size: 1.1rem;
     letter-spacing: .1px;
@@ -83,7 +83,8 @@
 }
 
 .submit__message {
-   font-size: 1.4rem;
+    width: 70%;
+   font-size: 1.1rem;
    color: $color-primary;
    font-weight: bold;
    text-align: center;

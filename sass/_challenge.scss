@@ -1,3 +1,9 @@
+.challenge {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .access {
     height: 100vh;
     z-index: 5;
@@ -16,6 +22,7 @@
         transition: all .2s ease-in-out;
         cursor: pointer;
         outline: none;
+        
 
         &:hover {
             color: #000;
@@ -27,4 +34,41 @@
         }
 
     }
+}
+
+.question {
+    text-align: center;
+    align-self: center;
+    font-size: 1rem;
+    color: $color-light;
+    background-color: $color-primary;
+    border-radius: 4px;
+    line-height: 65px;
+    width: 35vw; 
+    padding: 20px;
+    margin: 30px 0;
+    transition: all 3s;
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    span {
+        cursor: pointer;
+        letter-spacing: .1rem;
+
+        &:hover {
+            border-bottom: 1px solid $color-light;
+        }
+    }
+}
+
+.answers {
+    &__middle {
+        margin: 0 80px;
+    }
+}
+
+.wrong {
+    transition: all 1s;
 }

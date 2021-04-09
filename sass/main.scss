@@ -17,7 +17,7 @@ html {
 
 .grid__container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     min-height: 100vh;
     background-image: url(../img/1.png);
     background-size: cover;

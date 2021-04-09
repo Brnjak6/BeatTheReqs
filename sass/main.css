@@ -50,7 +50,7 @@
 }
 
 .total__price {
-  width: 38vw;
+  width: 30vw;
   padding: 20px 20px;
   font-size: 1.1rem;
   letter-spacing: 0.1px;
@@ -81,10 +81,17 @@
 }
 
 .submit__message {
-  font-size: 1.4rem;
+  width: 70%;
+  font-size: 1.1rem;
   color: #714A4A;
   font-weight: bold;
   text-align: center;
+}
+
+.challenge {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .access {
@@ -114,6 +121,38 @@
   box-shadow: 0 2px 10px #000;
 }
 
+.question {
+  text-align: center;
+  align-self: center;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #714A4A;
+  border-radius: 4px;
+  line-height: 65px;
+  width: 35vw;
+  padding: 20px;
+  margin: 30px 0;
+  transition: all 3s;
+}
+.question p {
+  font-size: 1.2rem;
+}
+.question span {
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+.question span:hover {
+  border-bottom: 1px solid #fff;
+}
+
+.answers__middle {
+  margin: 0 80px;
+}
+
+.wrong {
+  transition: all 1s;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -130,7 +169,7 @@ html {
 
 .grid__container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   min-height: 100vh;
   background-image: url(../img/1.png);
   background-size: cover;

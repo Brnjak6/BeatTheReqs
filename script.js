@@ -12,6 +12,10 @@ const price = document.querySelector('.price')
 const submitMessage = document.querySelector('.submit__message')
 const accessField = document.querySelector('.access')
 const accessFieldBtn = document.querySelector('.access-btn')
+const selectionContainer = document.querySelector('.selection')
+const questions = document.querySelectorAll('.question')
+const question = document.querySelector('.question')
+const wrongs = document.querySelectorAll('.wrong')
 
 
 let total = 0;
@@ -30,6 +34,8 @@ sumButton.addEventListener('click', function(e) {
         }
       }
 
+      submitMessage.textContent = `Great! Your system is ${total < 750 ? 'good office machine with some, little bit, outdated components' : 'definitely above average!'}. Now 3 questions are ready for you.`
+
       if(cpu.value === motherboard.value) {
         sumButtonBox.classList.add('hidden');
         submitMessage.classList.remove('hidden');
@@ -38,6 +44,7 @@ sumButton.addEventListener('click', function(e) {
         cpu.style.border = 'none';
         motherboard.style.border = 'none'
         priceTotal.style.color = '#000'
+
       } else {
         total = 0;
         priceTotal.textContent = 'Invalid combination'
@@ -45,7 +52,29 @@ sumButton.addEventListener('click', function(e) {
         cpu.style.border = '4px solid red';
         motherboard.style.border = '4px solid red';
       }
-   
+
+
 })
 
+accessFieldBtn.addEventListener('click', function() {
+    accessField.classList.add('hidden');
 
+    questions.forEach(q => q.classList.remove('hidden'))
+})
+
+questions.forEach(q => q.addEventListener('click', function(e) {
+    const clickedBox = e.target.closest('.question')
+    const correct = clickedBox.querySelector('.correct');
+    if (e.target == correct) {
+        this.textContent = 'Correct!'
+        this.style.opacity = 0;
+        setTimeout(() => {
+            this.style.display = 'none'
+        }, 1000);
+    }
+}))
+
+wrongs.forEach(wrong => wrong.addEventListener('click', function() {
+    wrong.textContent = 'false'
+    wrong.style.opacity = '0.3'
+}))
