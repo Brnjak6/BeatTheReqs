@@ -16,6 +16,10 @@ const selectionContainer = document.querySelector('.selection')
 const questions = document.querySelectorAll('.question')
 const question = document.querySelector('.question')
 const wrongs = document.querySelectorAll('.wrong')
+const infoBtn = document.querySelector('.information-btn')
+const modalOverlay = document.querySelector('.modal-overlay')
+const modalWindow = document.querySelector('.modal__window')
+const modalWindowClose = document.querySelector('.modal__window-btn')
 
 
 let total = 0;
@@ -28,7 +32,8 @@ selectAll.forEach(choice => choice.addEventListener('click', function(e) {
 sumButton.addEventListener('click', function(e) {
     for (let i=0; i<priceAll.length; i++){
         if(priceAll[i].innerHTML == 0) {
-            return priceTotal.innerHTML = 'Input missing...';
+            priceTotal.style.color = 'red'
+           return priceTotal.innerHTML = 'Input missing...';
         } else {
             total += parseInt(priceAll[i].innerHTML);
         }
@@ -57,20 +62,21 @@ sumButton.addEventListener('click', function(e) {
 })
 
 accessFieldBtn.addEventListener('click', function() {
-    accessField.classList.add('hidden');
-
+    accessField.style.transition = '1s'
+    accessField.style.opacity = '0'
+    setTimeout(() => {
+        accessField.classList.add('hidden');
+    }, 1000);
     questions.forEach(q => q.classList.remove('hidden'))
 })
 
 questions.forEach(q => q.addEventListener('click', function(e) {
-    const clickedBox = e.target.closest('.question')
+    const click = e.target;
+    const clickedBox = click.closest('.question')
     const correct = clickedBox.querySelector('.correct');
-    if (e.target == correct) {
+    if (click == correct) {
         this.textContent = 'Correct!'
-        this.style.opacity = 0;
-        setTimeout(() => {
-            this.style.display = 'none'
-        }, 1000);
+        this.style.visibility = 'hidden';
     }
 }))
 
@@ -78,3 +84,30 @@ wrongs.forEach(wrong => wrong.addEventListener('click', function() {
     wrong.textContent = 'false'
     wrong.style.opacity = '0.3'
 }))
+
+infoBtn.addEventListener('click', function() {
+    modalOverlay.classList.remove('hidden')
+    modalWindow.classList.remove('hidden')
+    setTimeout(() => {
+        modalWindow.style.top = '50%'
+    }, 150);
+})
+
+modalWindowClose.addEventListener('click', function() {
+        modalOverlay.classList.add('hidden')
+        modalWindow.classList.add('hidden')
+}) 
+
+modalOverlay.addEventListener('click', function() {
+    modalOverlay.classList.add('hidden')
+    modalWindow.classList.add('hidden')
+})
+
+document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape') {
+        modalOverlay.classList.add('hidden')
+        modalWindow.classList.add('hidden')
+    }
+    
+})
+

@@ -9,11 +9,23 @@
     <script defer src="script.js"></script>
 </head>
 <body class="body">
+    <div class="information">
+        <button class="information-btn">?</button>
+    </div>
+    <div class="modal-overlay hidden"></div>
+        <div class="modal__window hidden">
+            <div class="modal__window-btn">x</div>
+            <h1>Invalid combination?</h1>
+            <p>If you are stuck with making your components work in total, as a build, then you should make sure your components match each other. <br>Older processors such as AMD's FX series use AM3 socket of motherboard while newer ones like Ryzen series use AM4 socket.<br>
+              Intel processors use 1151 socket, while newer and stronger processors use 1200 socket. Try to figure out which one is adequate.
+            </p>
+        </div>
     <div class="grid__container">
         <div class="calculation">
             <div class="calculation__clip"></div>
             <h3 class="calculation__title">Choose your components</h3>
             <!-- Start of component selections -->
+            <div class="components-all">
             <div class="selection">
                 <label for="cpu" class="selection__text">Select your cpu:</label>
                 <select name="processors" id="cpu" class="selection__box">
@@ -33,7 +45,6 @@
                 <div class="selection__price">
                    <p>Price: <span class="price">0</span><span>$</span></p>
                 </div>
-                
             </div>
             <div class="selection">
                 <label for="gpu" class="selection__text">Select your gpu:</label>
@@ -55,7 +66,6 @@
                    <p>Price: <span class="price">0</span><span>$</span></p>
                 </div>
             </div>
-
             <div class="selection">
                 <label for="ram" class="selection__text">Select your ram:</label>
                 <select name="ram" id="ram" class="selection__box">
@@ -68,7 +78,6 @@
                    <p>Price: <span class="price">0</span><span>$</span></p>
                 </div>
             </div>
-
             <div class="selection">
                 <label for="mobo" class="selection__text">Select your motherboard:</label>
                 <select name="mobo" id="mobo" class="selection__box">
@@ -84,7 +93,6 @@
                    <p>Price: <span class="price">0</span><span>$</span></p>
                 </div>
             </div>
-            
             <div class="selection">
                 <label for="ssd" class="selection__text">Select your drive:</label>
                 <select name="ssd" id="ssd" class="selection__box">
@@ -96,7 +104,6 @@
                    <p>Price: <span class="price">0</span><span>$</span></p>
                 </div>
             </div>
-
             <div class="selection">
                 <label for="psu" class="selection__text">Select your power supply:</label>
                 <select name="psu" id="psu" class="selection__box">
@@ -135,6 +142,7 @@
                    <p>Price: <span class="price">0</span><span>$</span></p>
                 </div>
             </div>
+        </div>
             <!-- End of component selections -->
             <div class="total__price">
                 <p>Total amount: <span id="price-total">0</span></p>
