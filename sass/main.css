@@ -157,8 +157,9 @@ html {
 .total__price {
   width: 30vw;
   padding: 20px 20px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   letter-spacing: 0.1px;
+  font-weight: bold;
 }
 .total__price span {
   float: right;
