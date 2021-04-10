@@ -28,7 +28,9 @@ html {
 .body {
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
-    background: rgb(224, 224, 224);
+    background: url(../img/1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .grid__container {

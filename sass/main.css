@@ -10,7 +10,9 @@ html {
 .body {
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  background: #e0e0e0;
+  background: url(../img/1.png);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .grid__container {
