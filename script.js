@@ -33,7 +33,7 @@ sumButton.addEventListener('click', function(e) {
     for (let i=0; i<priceAll.length; i++){
         if(priceAll[i].innerHTML == 0) {
             priceTotal.style.color = 'red'
-           return priceTotal.innerHTML = 'Input missing...';
+           return priceTotal.innerHTML = 'Please, choose every component...';
         } else {
             total += parseInt(priceAll[i].innerHTML);
         }
