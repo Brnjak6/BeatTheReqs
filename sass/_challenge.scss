@@ -69,8 +69,14 @@
 }
 
 .answers {
-    &__middle {
-        margin: 0 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    & span {
+            margin: 0 .5rem;
     }
 }
 

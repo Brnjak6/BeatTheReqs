@@ -104,7 +104,7 @@ modalOverlay.addEventListener('click', function() {
 })
 
 document.addEventListener('keydown', function(e) {
-    if(e.key === 'Escape') {
+    if(e.keyCode === 27) {
         modalOverlay.classList.add('hidden')
         modalWindow.classList.add('hidden')
     }
