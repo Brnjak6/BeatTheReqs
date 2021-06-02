@@ -3,22 +3,28 @@
   padding: 0;
 }
 
+body,
 html {
-  box-sizing: border-box;
-}
-
-.body {
-  min-height: 100vh;
   font-family: "Poppins", sans-serif;
   background: url(../img/1.png);
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .grid__container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
   min-height: 100vh;
+}
+@media only screen and (max-width: 1200px) {
+  .grid__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 }
 
 .hidden {
@@ -30,9 +36,14 @@ html {
   flex-direction: column;
   align-items: center;
 }
+@media only screen and (max-width: 1200px) {
+  .calculation {
+    width: 90vw;
+  }
+}
 .calculation__title {
   width: 38vw;
-  color: #FF9494;
+  color: #ff9494;
   font-weight: 900;
   text-align: center;
   padding: 20px 20px;
@@ -42,18 +53,34 @@ html {
 @media only screen and (max-width: 550px) {
   .calculation__title {
     font-size: 1.2rem;
-    width: 80vw;
+    width: 100vw;
+    margin-top: 3rem;
   }
 }
 
 .components-all {
-  border: 3px solid #FF9494;
+  border: 3px solid #ff9494;
   border-radius: 25px;
   box-shadow: 0px 0px 24px 1px rgba(0, 0, 0, 0.39);
   background-image: linear-gradient(120deg, #d65d5d, #dfb9b9, #eb7a7a);
   background-size: 200%;
   -webkit-animation: infiniteLoop 5s infinite;
           animation: infiniteLoop 5s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media only screen and (max-width: 1200px) {
+  .components-all {
+    width: 90%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .components-all {
+    border-radius: 0;
+    width: 100%;
+  }
 }
 
 .selection {
@@ -63,17 +90,17 @@ html {
 }
 @media only screen and (max-width: 1140px) {
   .selection {
-    width: 50vw;
+    width: 90%;
   }
 }
-@media only screen and (max-width: 870px) {
+@media only screen and (max-width: 600px) {
   .selection {
-    width: 80vw;
-  }
-}
-@media only screen and (max-width: 700px) {
-  .selection {
-    flex-direction: row;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3rem 0;
   }
 }
 .selection__price {
@@ -81,18 +108,13 @@ html {
   font-size: 0.9rem;
   color: #fff;
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .selection__price {
-    font-size: 0.7rem;
+    font-size: 1.4rem;
   }
 }
 .selection__price span {
   float: right;
-}
-@media only screen and (max-width: 450px) {
-  .selection__price p {
-    font-size: 0.3rem;
-  }
 }
 .selection__text {
   margin-right: 30px;
@@ -107,21 +129,17 @@ html {
     font-size: 1rem;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .selection__text {
-    font-size: 0.7rem;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .selection__text {
-    font-size: 0.5rem;
+    margin-right: 0;
+    font-size: 1.4rem;
   }
 }
 .selection__box {
   float: right;
-  border: 2px solid #FF9494;
+  border: 2px solid #ff9494;
   color: #fff;
-  background: #FF9494;
+  background: #ff9494;
   border-radius: 5px;
   padding: 5px;
   font-size: 16px;
@@ -134,14 +152,10 @@ html {
     font-size: 0.8rem;
   }
 }
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
   .selection__box {
-    font-size: 0.7rem;
-  }
-}
-@media only screen and (max-width: 400px) {
-  .selection__box {
-    font-size: 0.5rem;
+    margin: 1.5rem 0;
+    font-size: 1.4rem;
   }
 }
 .selection__box option {
@@ -159,6 +173,12 @@ html {
 .total__price span {
   float: right;
 }
+@media only screen and (max-width: 600px) {
+  .total__price {
+    font-size: 1.1rem;
+    width: 60%;
+  }
+}
 
 .button-sum-btn {
   width: -webkit-fit-content;
@@ -168,7 +188,7 @@ html {
   justify-content: center;
   padding: 8px 15px;
   font-size: 1.1rem;
-  background: #FF9494;
+  background: #ff9494;
   color: #fff;
   outline: none;
   border: none;
@@ -184,7 +204,7 @@ html {
 .submit__message {
   width: 70%;
   font-size: 1.1rem;
-  color: #FF9494;
+  color: #ff9494;
   text-align: center;
 }
 
@@ -215,6 +235,8 @@ html {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  margin-bottom: 5rem;
+  width: 100%;
 }
 
 .access {
@@ -230,7 +252,7 @@ html {
   padding: 8px 20px;
   border: none;
   border-radius: 4px;
-  background: #FF9494;
+  background: #ff9494;
   color: #fff;
   transition: all 0.2s ease-in-out;
   cursor: pointer;
@@ -249,13 +271,18 @@ html {
   align-self: center;
   font-size: 1rem;
   color: #fff;
-  background-color: #FF9494;
+  background-color: #ff9494;
   border-radius: 4px;
   line-height: 65px;
   width: 35vw;
   padding: 20px;
   margin: 30px 0;
   transition: all 3s;
+}
+@media only screen and (max-width: 1200px) {
+  .question {
+    width: 90%;
+  }
 }
 @media only screen and (max-width: 550px) {
   .question {
@@ -271,7 +298,7 @@ html {
   letter-spacing: 0.1rem;
 }
 .question span:hover {
-  border-bottom: 1px solid #fff;
+  text-decoration: underline;
 }
 
 .answers {
@@ -297,7 +324,7 @@ html {
   justify-content: center;
   padding: 8px 15px;
   font-size: 1.1rem;
-  background: #FF9494;
+  background: #ff9494;
   color: #fff;
   outline: none;
   border: none;
@@ -308,11 +335,11 @@ html {
   right: 2vw;
   border-radius: 20px;
   float: right;
+  z-index: 100;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 450px) {
   .information-btn {
-    top: 3%;
-    right: -40%;
+    right: 0%;
   }
 }
 
@@ -347,12 +374,27 @@ html {
   text-align: center;
   background: #e7e7e7;
   transition: all 1s cubic-bezier(0.07, 0.91, 0.63, 1.02);
+  overflow-y: auto;
   padding: 50px 50px;
   border-radius: 40px;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 800px) {
   .modal__window {
-    transform: translate(-10%, -10%);
+    width: 90vw;
+    height: 90vh;
+    border-radius: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+  .modal__window h1 {
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  .modal__window p {
+    padding: 1rem 2rem;
+    font-size: 1rem;
   }
 }
 .modal__window p {
@@ -368,7 +410,7 @@ html {
   justify-content: center;
   padding: 8px 15px;
   font-size: 1.1rem;
-  background: #FF9494;
+  background: #ff9494;
   color: #fff;
   outline: none;
   border: none;
@@ -378,4 +420,14 @@ html {
   padding: 2px 10px;
   top: 2vh;
   right: 2vw;
+}
+@media only screen and (max-width: 800px) {
+  .modal__window-btn {
+    top: 5%;
+    right: 10%;
+  }
+}
+
+.hidden {
+  display: none;
 }/*# sourceMappingURL=main.css.map */

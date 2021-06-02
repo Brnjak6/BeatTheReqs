@@ -1,85 +1,89 @@
 .challenge {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 5rem;
+  width: 100%;
 }
 
 .access {
-    height: 100vh;
-    z-index: 5;
-    
-    &-btn {
-        position: relative;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-70%);
-        font-size: 2rem;
-        padding: 8px 20px;
-        border: none;
-        border-radius: 4px;
-        background: $color-primary;
-        color: $color-light;
-        transition: all .2s ease-in-out;
-        cursor: pointer;
-        outline: none;
-        
+  height: 100vh;
+  z-index: 5;
 
-        &:hover {
-            color: grey;
-        }
+  &-btn {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    font-size: 2rem;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 4px;
+    background: $color-primary;
+    color: $color-light;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    outline: none;
 
-        &:active {
-            transform: translate(-50%, -60%);
-            box-shadow: 0 2px 10px #000;
-        }
-
+    &:hover {
+      color: grey;
     }
+
+    &:active {
+      transform: translate(-50%, -60%);
+      box-shadow: 0 2px 10px #000;
+    }
+  }
 }
 
 .question {
-    text-align: center;
-    align-self: center;
+  text-align: center;
+  align-self: center;
+  font-size: 1rem;
+  color: $color-light;
+  background-color: $color-primary;
+  border-radius: 4px;
+  line-height: 65px;
+  width: 35vw;
+  padding: 20px;
+  margin: 30px 0;
+  transition: all 3s;
+
+  @media only screen and (max-width: 1200px) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: 550px) {
     font-size: 1rem;
-    color: $color-light;
-    background-color: $color-primary;
-    border-radius: 4px;
-    line-height: 65px;
-    width: 35vw; 
-    padding: 20px;
-    margin: 30px 0;
-    transition: all 3s;
+    width: 90vw;
+  }
 
-    @media only screen and (max-width: 550px) {
-        font-size: 1rem;
-        width: 90vw;
+  p {
+    font-size: 1.2rem;
+  }
+
+  span {
+    cursor: pointer;
+    letter-spacing: 0.1rem;
+
+    &:hover {
+      text-decoration: underline;
     }
-
-    p {
-        font-size: 1.2rem;
-    }
-
-    span {
-        cursor: pointer;
-        letter-spacing: .1rem;
-
-        &:hover {
-            border-bottom: 1px solid $color-light;
-        }
-    }
+  }
 }
 
 .answers {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 
-    & span {
-            margin: 0 .5rem;
-    }
+  & span {
+    margin: 0 0.5rem;
+  }
 }
 
 .wrong {
-    transition: all 1s;
+  transition: all 1s;
 }

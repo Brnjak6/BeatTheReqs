@@ -1,155 +1,171 @@
 .calculation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
+  @media only screen and (max-width: 1200px) {
+    width: 90vw;
+  }
 
-    &__title {
-        width: 38vw;
-        color: $color-primary;
-        font-weight: 900;
-        text-align: center;
-        padding: 20px 20px;
-        font-size: 1.8rem;
-        letter-spacing: .1rem;
+  &__title {
+    width: 38vw;
+    color: $color-primary;
+    font-weight: 900;
+    text-align: center;
+    padding: 20px 20px;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
 
-        @media only screen and (max-width: 550px) {
-            font-size: 1.2rem;
-            width: 80vw;
-        }
-      
+    @media only screen and (max-width: 550px) {
+      font-size: 1.2rem;
+      width: 100vw;
+      margin-top: 3rem;
     }
+  }
 }
 
 .components-all {
-    border: 3px solid $color-primary;
-    border-radius: 25px;
-    box-shadow: 0px 0px 24px 1px rgba(0,0,0,0.39);
-    background-image: linear-gradient(120deg, #d65d5d, #dfb9b9, #eb7a7a);
-    background-size: 200%;
-    animation: infiniteLoop 5s infinite;   
-} 
+  border: 3px solid $color-primary;
+  border-radius: 25px;
+  box-shadow: 0px 0px 24px 1px rgba(0, 0, 0, 0.39);
+  background-image: linear-gradient(120deg, #d65d5d, #dfb9b9, #eb7a7a);
+  background-size: 200%;
+  animation: infiniteLoop 5s infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @media only screen and (max-width: 1200px) {
+    width: 90%;
+  }
+
+  @media only screen and (max-width: 600px) {
+    border-radius: 0;
+    width: 100%;
+  }
+}
 
 .selection {
-    width: 38vw;
-    padding: 8px 20px;
-    font-size: 1.1rem;
+  width: 38vw;
+  padding: 8px 20px;
+  font-size: 1.1rem;
 
-    @media only screen and (max-width: 1140px) {
-        width: 50vw;
-    }
-    @media only screen and (max-width: 870px) {
-        width: 80vw;
-    }
-    @media only screen and (max-width: 700px) {
-            flex-direction: row;
-        }
+  @media only screen and (max-width: 1140px) {
+    width: 90%;
+  }
 
-    &__price {
-        margin-top: 20px;
-        font-size: .9rem;
-        color: $color-light;
+  @media only screen and (max-width: 600px) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 3rem 0;
+  }
 
-        @media only screen and (max-width: 550px) {
-            font-size: .7rem;
-        }
+  &__price {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: $color-light;
 
-        span {
-            float: right;
-        }
-
-        p {
-            @media only screen and (max-width: 450px) {
-                font-size: .3rem
-            }
-        }
+    @media only screen and (max-width: 600px) {
+      font-size: 1.4rem;
     }
 
-    &__text {
-        margin-right: 30px;
-        font-size: 1.2rem;
-        color: $color-light;
-        text-transform: uppercase;
-        font-weight: lighter;
-        opacity: .7;
+    span {
+      float: right;
+    }
+  }
 
-        @media only screen and (max-width: 1370px) {
-            font-size: 1rem;
-        }
-        @media only screen and (max-width: 550px) {
-            font-size: .7rem; 
-        }
-        @media only screen and (max-width: 400px) {
-            font-size: .5rem; 
-        }
+  &__text {
+    margin-right: 30px;
+    font-size: 1.2rem;
+    color: $color-light;
+    text-transform: uppercase;
+    font-weight: lighter;
+    opacity: 0.7;
+
+    @media only screen and (max-width: 1370px) {
+      font-size: 1rem;
     }
 
-    &__box {
-        float: right;
-        border: 2px solid $color-primary;
-        color: $color-light;
-        background: $color-primary;
-        border-radius: 5px;
-        padding: 5px;
-        font-size: 16px;
-        letter-spacing: .8px;
-        outline: none;
-        cursor: pointer;
-
-        @media only screen and (max-width: 1370px) {
-            font-size: .8rem
-        }
-        @media only screen and (max-width: 550px) {
-            font-size: .7rem;
-        }
-        @media only screen and (max-width: 400px) {
-            font-size: .5rem;
-        }
-
-        option {
-            font-weight: bold;
-            padding-top: 4px;
-        }
+    @media only screen and (max-width: 600px) {
+      margin-right: 0;
+      font-size: 1.4rem;
     }
+  }
+
+  &__box {
+    float: right;
+    border: 2px solid $color-primary;
+    color: $color-light;
+    background: $color-primary;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    outline: none;
+    cursor: pointer;
+
+    @media only screen and (max-width: 1370px) {
+      font-size: 0.8rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      margin: 1.5rem 0;
+      font-size: 1.4rem;
+    }
+
+    option {
+      font-weight: bold;
+      padding-top: 4px;
+    }
+  }
 }
 
 .total__price {
-    width: 30vw;
-    padding: 20px 20px;
-    font-size: 1.2rem;
-    letter-spacing: .1px;
-    font-weight: bold;
+  width: 30vw;
+  padding: 20px 20px;
+  font-size: 1.2rem;
+  letter-spacing: 0.1px;
+  font-weight: bold;
 
-    span {
-        float: right;
-    }
+  span {
+    float: right;
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: 1.1rem;
+    width: 60%;
+  }
 }
 
 .button-sum-btn {
-    @include button;
-    transition: all .1s;
+  @include button;
+  transition: all 0.1s;
 
-    &:active {
-        transform: translateY(3px);
-        box-shadow: 0px 5px 8px -4px rgba(0,0,0,0.75);
-    }
+  &:active {
+    transform: translateY(3px);
+    box-shadow: 0px 5px 8px -4px rgba(0, 0, 0, 0.75);
+  }
 }
 
 .submit__message {
-    width: 70%;
-   font-size: 1.1rem;
-   color: $color-primary;
-   text-align: center;
+  width: 70%;
+  font-size: 1.1rem;
+  color: $color-primary;
+  text-align: center;
 }
 
 @keyframes infiniteLoop {
-    0% {
-       background-size: 150%
-    }
-    50% {
-        background-size: 300%;
-    }
-    100% {
-        background-size: 150%;
-    }
+  0% {
+    background-size: 150%;
+  }
+  50% {
+    background-size: 300%;
+  }
+  100% {
+    background-size: 150%;
+  }
 }

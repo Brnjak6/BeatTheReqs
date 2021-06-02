@@ -1,46 +1,49 @@
-$color-primary: #FF9494;
+$color-primary: #ff9494;
 $color-primary-lighter: #fbc2c2;
 $color-light: #fff;
 
 @mixin button {
-    width: fit-content;
-    display: flex;
-    justify-content: center;
-    padding: 8px 15px;
-    font-size: 1.1rem;
-    background: $color-primary;
-    color: $color-light;
-    outline: none;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  padding: 8px 15px;
+  font-size: 1.1rem;
+  background: $color-primary;
+  color: $color-light;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
+body,
 html {
-    box-sizing: border-box;
-}
-
-.body {
-    min-height: 100vh;
-    font-family: 'Poppins', sans-serif;
-    background: url(../img/1.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+  background: url(../img/1.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 .grid__container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
-    min-height: 100vh;   
-}
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(560px, 1fr));
+  min-height: 100vh;
 
+  @media only screen and (max-width: 1200px) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
 
 .hidden {
-    display: none;
+  display: none;
 }
-

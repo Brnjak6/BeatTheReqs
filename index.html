@@ -1,199 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="./sass/main.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech & Challenges</title>
+    <link rel="stylesheet" href="./sass/main.css" />
     <script defer src="script.js"></script>
-</head>
-<body class="body">
-    <div class="information">
-        <button class="information-btn">?</button>
-    </div>
+    <link rel="icon" href="./img/cpu.svg" />
+  </head>
+  <body class="body">
+    <button class="information-btn">?</button>
+
     <div class="modal-overlay hidden"></div>
-        <div class="modal__window hidden">
-            <div class="modal__window-btn">x</div>
-            <h1>Invalid combination?</h1>
-            <p>If you are stuck with making your components work in total, as a build, then you should make sure your components match each other. <br>Older processors such as AMD's FX series use AM3 socket of motherboard while newer ones like Ryzen series use AM4 socket.<br>
-              Intel processors use 1151 socket, while newer and stronger processors use 1200 socket. Try to figure out which one is adequate.
-            </p>
-        </div>
-    <div class="grid__container">
-        <div class="calculation">
-            <div class="calculation__clip"></div>
-            <h3 class="calculation__title">Choose your components</h3>
-            <!-- Start of component selections -->
-            <div class="components-all">
-            <div class="selection">
-                <label for="cpu" class="selection__text">Select your cpu:</label>
-                <select name="processors" id="cpu" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="am3" data-price="80">FX 6300</option>
-                    <option value="am3" data-price="100">FX 8320</option>
-                    <option value="am4" data-price="130">Ryzen 3 2200G</option>
-                    <option value="int" data-price="140">i5 10400F</option>
-                    <option value="am4" data-price="150">Ryzen 5 1600</option>
-                    <option value="int-1" data-price="170">i5 9400</option>
-                    <option value="am4" data-price="190">Ryzen 5 2600</option>
-                    <option value="int" data-price="210">i5 10600</option>
-                    <option value="am4" data-price="230">Ryzen 5 3600</option>
-                    <option value="int" data-price="310">i7 10700</option>
-                    <option value="int" data-price="350">i7 11700</option>
-                    <option value="am4" data-price="420">Ryzen 7 3800X</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-            <div class="selection">
-                <label for="gpu" class="selection__text">Select your gpu:</label>
-                <select name="graphic-cards" id="gpu" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="gpu" data-price="90">GTX 650 Ti</option>
-                    <option value="gpu" data-price="100">AMD HD 7850 </option>
-                    <option value="gpu" data-price="110">GTX 660</option>
-                    <option value="gpu" data-price="140">GTX 950</option>
-                    <option value="gpu" data-price="170">GTX 960</option>
-                    <option value="gpu" data-price="180">GTX 1050 Ti</option>
-                    <option value="gpu" data-price="210">GTX 1060</option>
-                    <option value="gpu" data-price="230">RX 5500 XT</option>
-                    <option value="gpu" data-price="240">GTX 1070</option>
-                    <option value="gpu" data-price="280">RTX 2060</option>
-                    <option value="gpu" data-price="350">RTX 2070</option>
-                    <option value="gpu" data-price="420">RTX 2080</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-            <div class="selection">
-                <label for="ram" class="selection__text">Select your ram:</label>
-                <select name="ram" id="ram" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="am4" data-price="70">8GB RAM</option>
-                    <option value="am4" data-price="90">12GB RAM</option>
-                    <option value="am4" data-price="120">16GB RAM</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-            <div class="selection">
-                <label for="mobo" class="selection__text">Select your motherboard:</label>
-                <select name="mobo" id="mobo" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="am3" data-price="50">ASRock 760GM /AM3</option>
-                    <option value="am4" data-price="60">Gigabyte A320M /AM4</option>
-                    <option value="am4" data-price="70">ASRock A520M /AM4</option>
-                    <option value="int-1" data-price="75">GB H310 /1151</option>
-                    <option value="int" data-price="80">ASUS H410M-A /1200</option>
-                    <option value="am4" data-price="85">MSI A520M /AM4</option>
-                    <option value="am4" data-price="100">MSI B450M /AM4</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-            <div class="selection">
-                <label for="ssd" class="selection__text">Select your drive:</label>
-                <select name="ssd" id="ssd" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="8" data-price="40">SSD 240GB</option>
-                    <option value="16" data-price="80">SSD 500GB</option>
-                    <option value="16" data-price="120">SSD 1TB</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-            <div class="selection">
-                <label for="psu" class="selection__text">Select your power supply:</label>
-                <select name="psu" id="psu" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="8" data-price="45">F. Hyper 80+ 550W</option>
-                    <option value="16" data-price="70">Evga 500W</option>
-                    <option value="16" data-price="95">TT GX1 600W</option>
-                    <option value="16" data-price="110">Corsair CX750F 750W</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-            <div class="selection">
-                <label for="case" class="selection__text">Select your case:</label>
-                <select name="case" id="case" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="8" data-price="35">Zalman S4</option>
-                    <option value="16" data-price="50">Sharkoon VG5-V</option>
-                    <option value="16" data-price="60">LC-Power 706B</option>
-                    <option value="16" data-price="65">MS Fighter V315</option>
-                    <option value="16" data-price="75">TT H100</option>
-                    <option value="16" data-price="85">MS Armor V705</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-            <div class="selection">
-                <label for="cooler" class="selection__text">Select your cpu cooler:</label>
-                <select name="cooler" id="cooler" class="selection__box">
-                    <option value="am3" data-price="0">--Select here--</option>
-                    <option value="clr" data-price="10">SST-KR03</option>
-                    <option value="clr" data-price="20">Zalman CNPS4X</option>
-                    <option value="clr" data-price="30">LC CC-120</option>
-                    <option value="clr" data-price="70">Zalman CNPS16X</option>
-                </select>
-                <div class="selection__price">
-                   <p>Price: <span class="price">0</span><span>$</span></p>
-                </div>
-            </div>
-        </div>
-            <!-- End of component selections -->
-            <div class="total__price">
-                <p>Total amount: <span id="price-total">0</span></p>
-            </div>
-
-            <div class="button__sum">
-                <button class="button-sum-btn">Submit your choices</button>
-            </div>
-            <div class="submit__message hidden">
-                <p>It works!<br>Test yourself with few questions</p>
-            </div>
-
-        </div>
-        <div class="challenge">
-            <div class="access hidden">
-                <button class="access-btn">Questions</button>
-            </div>
-            <div class="question question-1 hidden">
-                <p>What was the release date of AMD FX series?</p>
-                <div class="answers">
-                    <span class="wrong">2009</span>
-                    <span class="answers__middle correct">2011</span>
-                    <span class="wrong">2012</span>
-                </div>
-                </div>
-            <div class="question question-2 hidden">
-                <p>How many pixels does 4k display have?</p>
-                <div class="answers">
-                    <span class="wrong">3680 x 2140</span>
-                    <span class="answers__middle wrong">3640 x 2160</span>
-                    <span class="correct">3840 x 2160</span>
-                </div>
-            </div>
-            <div class="question question-3 hidden">
-                <p>Country with the fastest internet in 2021?</p>
-                <div class="answers">
-                    <span class="correct">Singapore</span>
-                    <span class="answers__middle wrong">Romania</span>
-                    <span class="wrong">Hong Kong</span>
-                </div>
-            </div>
-
-        </div>
+    <div class="modal__window hidden">
+      <div class="modal__window-btn">x</div>
+      <h1>Invalid combination?</h1>
+      <p>
+        If you are stuck with making your components work in total, as a build,
+        then you should make sure your components match each other. <br />Older
+        processors such as AMD's FX series use AM3 socket of motherboard while
+        newer ones like Ryzen series use AM4 socket.<br />
+        Intel processors use 1151 socket, while newer and stronger processors
+        use 1200 socket. Try to figure out which one is adequate.
+      </p>
     </div>
+    <div class="grid__container">
+      <div class="calculation">
+        <div class="calculation__clip"></div>
+        <h3 class="calculation__title">Choose your components</h3>
+        <!-- Start of component selections -->
+        <div class="components-all">
+          <div class="selection">
+            <label for="cpu" class="selection__text">Select your cpu:</label>
+            <select name="processors" id="cpu" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="am3" data-price="80">FX 6300</option>
+              <option value="am3" data-price="100">FX 8320</option>
+              <option value="am4" data-price="130">Ryzen 3 2200G</option>
+              <option value="int" data-price="140">i5 10400F</option>
+              <option value="am4" data-price="150">Ryzen 5 1600</option>
+              <option value="int-1" data-price="170">i5 9400</option>
+              <option value="am4" data-price="190">Ryzen 5 2600</option>
+              <option value="int" data-price="210">i5 10600</option>
+              <option value="am4" data-price="230">Ryzen 5 3600</option>
+              <option value="int" data-price="310">i7 10700</option>
+              <option value="int" data-price="350">i7 11700</option>
+              <option value="am4" data-price="420">Ryzen 7 3800X</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+          <div class="selection">
+            <label for="gpu" class="selection__text">Select your gpu:</label>
+            <select name="graphic-cards" id="gpu" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="gpu" data-price="90">GTX 650 Ti</option>
+              <option value="gpu" data-price="100">AMD HD 7850</option>
+              <option value="gpu" data-price="110">GTX 660</option>
+              <option value="gpu" data-price="140">GTX 950</option>
+              <option value="gpu" data-price="170">GTX 960</option>
+              <option value="gpu" data-price="180">GTX 1050 Ti</option>
+              <option value="gpu" data-price="210">GTX 1060</option>
+              <option value="gpu" data-price="230">RX 5500 XT</option>
+              <option value="gpu" data-price="240">GTX 1070</option>
+              <option value="gpu" data-price="280">RTX 2060</option>
+              <option value="gpu" data-price="350">RTX 2070</option>
+              <option value="gpu" data-price="420">RTX 2080</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+          <div class="selection">
+            <label for="ram" class="selection__text">Select your ram:</label>
+            <select name="ram" id="ram" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="am4" data-price="70">8GB RAM</option>
+              <option value="am4" data-price="90">12GB RAM</option>
+              <option value="am4" data-price="120">16GB RAM</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+          <div class="selection">
+            <label for="mobo" class="selection__text"
+              >Select your motherboard:</label
+            >
+            <select name="mobo" id="mobo" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="am3" data-price="50">ASRock 760GM /AM3</option>
+              <option value="am4" data-price="60">Gigabyte A320M /AM4</option>
+              <option value="am4" data-price="70">ASRock A520M /AM4</option>
+              <option value="int-1" data-price="75">GB H310 /1151</option>
+              <option value="int" data-price="80">ASUS H410M-A /1200</option>
+              <option value="am4" data-price="85">MSI A520M /AM4</option>
+              <option value="am4" data-price="100">MSI B450M /AM4</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+          <div class="selection">
+            <label for="ssd" class="selection__text">Select your drive:</label>
+            <select name="ssd" id="ssd" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="8" data-price="40">SSD 240GB</option>
+              <option value="16" data-price="80">SSD 500GB</option>
+              <option value="16" data-price="120">SSD 1TB</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+          <div class="selection">
+            <label for="psu" class="selection__text"
+              >Select your power supply:</label
+            >
+            <select name="psu" id="psu" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="8" data-price="45">F. Hyper 80+ 550W</option>
+              <option value="16" data-price="70">Evga 500W</option>
+              <option value="16" data-price="95">TT GX1 600W</option>
+              <option value="16" data-price="110">Corsair CX750F 750W</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+          <div class="selection">
+            <label for="case" class="selection__text">Select your case:</label>
+            <select name="case" id="case" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="8" data-price="35">Zalman S4</option>
+              <option value="16" data-price="50">Sharkoon VG5-V</option>
+              <option value="16" data-price="60">LC-Power 706B</option>
+              <option value="16" data-price="65">MS Fighter V315</option>
+              <option value="16" data-price="75">TT H100</option>
+              <option value="16" data-price="85">MS Armor V705</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+          <div class="selection">
+            <label for="cooler" class="selection__text"
+              >Select your cpu cooler:</label
+            >
+            <select name="cooler" id="cooler" class="selection__box">
+              <option value="am3" data-price="0">--Select here--</option>
+              <option value="clr" data-price="10">SST-KR03</option>
+              <option value="clr" data-price="20">Zalman CNPS4X</option>
+              <option value="clr" data-price="30">LC CC-120</option>
+              <option value="clr" data-price="70">Zalman CNPS16X</option>
+            </select>
+            <div class="selection__price">
+              <p>
+                Price: <span class="price">0</span
+                ><span style="margin-left: 0.5rem">$</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!-- End of component selections -->
+        <div class="total__price">
+          <p>Total price: <span id="price-total">0</span></p>
+        </div>
 
-</body>
+        <div class="button__sum">
+          <button class="button-sum-btn">Submit your choices</button>
+        </div>
+        <div class="submit__message hidden">
+          <p>It works!<br />Test yourself with few questions</p>
+        </div>
+      </div>
+      <div class="challenge">
+        <div class="access hidden">
+          <button class="access-btn">Questions</button>
+        </div>
+        <div class="question question-1 hidden">
+          <p>What was the release date of AMD FX series?</p>
+          <div class="answers">
+            <span class="wrong">2009</span>
+            <span class="answers__middle correct">2011</span>
+            <span class="wrong">2012</span>
+          </div>
+        </div>
+        <div class="question question-2 hidden">
+          <p>How many pixels does 4k display have?</p>
+          <div class="answers">
+            <span class="wrong">3680 x 2140</span>
+            <span class="answers__middle wrong">3640 x 2160</span>
+            <span class="correct">3840 x 2160</span>
+          </div>
+        </div>
+        <div class="question question-3 hidden">
+          <p>Country with the fastest internet in 2021?</p>
+          <div class="answers">
+            <span class="correct">Singapore</span>
+            <span class="answers__middle wrong">Romania</span>
+            <span class="wrong">Hong Kong</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
