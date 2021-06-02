@@ -1,4 +1,4 @@
-# VanillaJS-PCParts
+# Interactive Vanilla JS project
 
 ![landing page](https://i.ibb.co/x50PbjP/Screenshot-120.png)
 
