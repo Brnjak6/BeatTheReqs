@@ -52,7 +52,7 @@ html {
 }
 @media only screen and (max-width: 550px) {
   .calculation__title {
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     width: 100vw;
     margin-top: 3rem;
   }
@@ -88,7 +88,7 @@ html {
   padding: 8px 20px;
   font-size: 1.1rem;
 }
-@media only screen and (max-width: 1140px) {
+@media only screen and (max-width: 1200px) {
   .selection {
     width: 90%;
   }
