@@ -1,6 +1,6 @@
 # Interactive Vanilla JS project
 
-![landing page](https://i.ibb.co/x50PbjP/Screenshot-120.png)
+![landing page](https://imgur.com/KMTbhuL)
 
 Selection menu that combines chosen components and displays final price.
 
