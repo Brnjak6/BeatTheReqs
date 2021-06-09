@@ -1,5 +1,5 @@
-$color-primary: #ff9494;
-$color-primary-lighter: #fbc2c2;
+$color-primary: #0d266c;
+$color-primary-lighter: #364c87;
 $color-light: #fff;
 
 @mixin button {
@@ -24,7 +24,6 @@ $color-light: #fff;
 body,
 html {
   font-family: "Poppins", sans-serif;
-  background: url(../img/1.png);
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
